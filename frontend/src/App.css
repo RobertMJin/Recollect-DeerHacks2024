@@ -64,6 +64,7 @@
 
 .App .sign-in {
   text-align: center;
+  margin-top: 20px
 }
 
 .App .continue-as-guest {
@@ -81,4 +82,17 @@
 
 .overlap-group {
   line-height: 4vh;
+}
+
+.button {
+  background-color: --colourblack-grey10;
+  width: 220px;
+  margin-top: 10px;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+
+  font-family: 'Circular',-apple-system,'BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+  font-size: 15px;
+  font-weight: 500;
 }
