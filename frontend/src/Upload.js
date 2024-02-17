@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import ReactPlayer from 'react-player';
+import { Link } from 'react-router-dom';
 
 const Upload = () => {
   const [file, setFile] = useState(null);
@@ -36,6 +37,9 @@ const Upload = () => {
       <input type="file" accept="video/*" onChange={handleFileChange} />
       {videoUrl && <ReactPlayer url={videoUrl} controls />}
       {file && <button onClick={handleUpload}>Upload Video</button>}
+      <Link to="/">
+        <button className="button">Back</button>
+      </Link>
     </div>
   );
 };
