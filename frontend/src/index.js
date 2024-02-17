@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import Playback from './Playback';
 import Upload from './Upload';
 import reportWebVitals from './reportWebVitals';
 
