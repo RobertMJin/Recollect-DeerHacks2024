@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -29,11 +18,9 @@
 }
 
 .App .overlap-group {
-  height: 222px;
-  left: 395px;
+  left: 30%;
+  top: 23%;
   position: absolute;
-  top: 295px;
-  width: 620px;
 }
 
 .App .antic-didone-regular {
@@ -41,35 +28,26 @@
   font-size: 40px;
   font-weight: 400;
   height: 48px;
-  left: 50%;
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
-  text-align: center;
-  transform: translateX(-50%);
   white-space: nowrap;
-  top: 50%
 }
 
 .App .antic-didone-bolded {
   -webkit-text-stroke: 3px #000000;
   font-size: 140px;
   font-weight: 400;
-  left: 50%;
   letter-spacing: 0;
   line-height: normal;
-  position: absolute;
   text-align: center;
-  transform: translateX(-50%) translateY(-50%); /* Added property */
-  top: 40%; /* Added property */
 }
 
-.App .SIGN-IN {
-  height: 82px;
-  left: 552px;
-  position: absolute;
-  top: 543px;
-  width: 337px;
+.App .sign-in {
+  text-align: center;
+}
+
+.App .continue-as-guest {
+  text-align: center;
 }
 
 .App .frame {
@@ -82,19 +60,6 @@
   width: unset !important;
 }
 
-.App .CONTINUE-AS-GUEST {
-  height: 82px;
-  left: 515px;
-  position: absolute;
-  top: 642px;
-  width: 410px;
-}
-
-.App .continue-as-guest-wrapper {
-  height: 82px;
-  position: relative;
-  width: 410px;
-}  
 :root {
   --colouraccentcolor-blue100: rgba(80, 178, 192, 1);
   --colouraccentcolor-fadedorange100: rgba(250, 170, 141, 1);
@@ -109,13 +74,13 @@
   --variable-collection-90: rgba(255, 83, 25, 1);
 }
 .dot {
-  height: 3vw;
-  width: 3vw;
+  height: 1vw;
+  width: 1vw;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  margin-right: 0.5vw;
+  margin-right: 1vw;
 }
 .overlap-group {
-  line-height: 2.2vh;
+  line-height: 4vh;
 }
