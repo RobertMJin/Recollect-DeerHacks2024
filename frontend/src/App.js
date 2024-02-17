@@ -1,4 +1,5 @@
 import './App.css';
+import './singleFileUploader.js';
 import React from 'react';
 
 function App() {
@@ -41,6 +42,11 @@ function App() {
               <button className="button">Continue as Guest</button>
             </div>
           </div>
+
+          <form action="/action_page.php">
+              <input type="file" id="myFile" name="filename"></input>
+              <input type="submit"></input>
+          </form>
         </div>
       </header>
     </div>
