@@ -14,7 +14,7 @@ function SingleFileUploader() {
       formData.append("file", selectedFile);
 
       try {
-        const result = await fetch("https://http://localhost:3000/", {
+        const result = await fetch("API?/SERVER", {
             method: "POST",
             body: formData
         });
