@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { Link } from 'react-router-dom';
 
 function LandingPage() {
     return(
@@ -37,6 +38,7 @@ function LandingPage() {
           <div className="continue-as-guest">
             <div className="frame">
               <button className="button">Continue as Guest</button>
+              <Link to="/fileUpload"></Link>
             </div>
           </div>
 
