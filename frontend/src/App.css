@@ -28,11 +28,94 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App .overlap-group {
+  height: 222px;
+  left: 395px;
+  position: absolute;
+  top: 295px;
+  width: 620px;
+}
+
+.App .antic-didone-regular {
+  color: #000000;
+  font-size: 40px;
+  font-weight: 400;
+  height: 48px;
+  left: 50%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  top: 50%
+}
+
+.App .antic-didone-bolded {
+  -webkit-text-stroke: 3px #000000;
+  font-size: 140px;
+  font-weight: 400;
+  left: 50%;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  transform: translateX(-50%) translateY(-50%); /* Added property */
+  top: 40%; /* Added property */
+}
+
+.App .SIGN-IN {
+  height: 82px;
+  left: 552px;
+  position: absolute;
+  top: 543px;
+  width: 337px;
+}
+
+.App .frame {
+  height: 82px;
+  position: relative;
+  width: 337px;
+}
+
+.App .design-component-instance-node {
+  width: unset !important;
+}
+
+.App .CONTINUE-AS-GUEST {
+  height: 82px;
+  left: 515px;
+  position: absolute;
+  top: 642px;
+  width: 410px;
+}
+
+.App .continue-as-guest-wrapper {
+  height: 82px;
+  position: relative;
+  width: 410px;
+}  
+:root {
+  --colouraccentcolor-blue100: rgba(80, 178, 192, 1);
+  --colouraccentcolor-fadedorange100: rgba(250, 170, 141, 1);
+  --colouraccentcolor-orange100: rgba(255, 64, 0, 1);
+  --colouraccentcolor-orange80: rgba(217, 108, 6, 1);
+  --colouraccentcolor-orange90: rgba(255, 83, 25, 1);
+  --colourbackground-peach: rgba(254, 239, 221, 1);
+  --colourblack-grey10: rgba(217, 217, 217, 1);
+  --colourblack-grey100: rgba(32, 30, 31, 1);
+  --colourblack-grey80: rgba(65, 62, 64, 1);
+  --colourblack-grey90: rgba(49, 47, 48, 1);
+  --variable-collection-90: rgba(255, 83, 25, 1);
+}
+.dot {
+  height: 3vw;
+  width: 3vw;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.5vw;
+}
+.overlap-group {
+  line-height: 2.2vh;
 }
