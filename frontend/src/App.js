@@ -1,5 +1,6 @@
 import './App.css';
 import SingleFileUploader from './singleFileUploader.js';
+import Upload from './Upload.js';
 import React from 'react';
 import LandingPage from "./LandingPage.js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -11,7 +12,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/fileUpload" element={<SingleFileUploader />} />
+            <Route path="/fileUpload" element={<Upload />} />
           </Routes>
             {/*
             <Route path="/results">
