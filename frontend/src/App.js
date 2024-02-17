@@ -1,11 +1,12 @@
 import './App.css';
+import React from 'react';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
           <div className="top-text">
-            
+
             {/* Dots */}
             <div className="overlap-group">
               <div className="dotrow">

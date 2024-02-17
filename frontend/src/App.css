@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'AnticDidone-Regular';
+  src: local('Antic-Didone-Regular'), url(assets/fonts/AnticDidone-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'AnticDidone-Bolded';
+  src: local('Antic-Didone-Regular'), url(assets/fonts/AnticDidone-Regular.ttf) format('truetype');
+}
+
+
 .App {
   text-align: center;
 }
@@ -24,17 +34,17 @@
 }
 
 .App .antic-didone-regular {
-  color: #000000;
-  font-size: 40px;
-  font-weight: 400;
-  height: 48px;
+  font-family: "AnticDidone-Regular";
   letter-spacing: 0;
+  font-weight: 400;
+  font-size: 40px;
   line-height: normal;
-  white-space: nowrap;
+  text-align: center;
 }
 
 .App .antic-didone-bolded {
-  -webkit-text-stroke: 3px #000000;
+  stroke: 3;
+  font-family: "AnticDidone-Bolded";
   font-size: 140px;
   font-weight: 400;
   letter-spacing: 0;
