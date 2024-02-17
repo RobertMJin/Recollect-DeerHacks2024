@@ -37,8 +37,9 @@ function LandingPage() {
           </div>
           <div className="continue-as-guest">
             <div className="frame">
-              <button className="button">Continue as Guest</button>
-              <Link to="/fileUpload"></Link>
+                <Link to="/fileUpload">
+                <button className="button">Continue as Guest</button>
+              </Link>
             </div>
           </div>
 
