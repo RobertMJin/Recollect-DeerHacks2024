@@ -70,6 +70,18 @@
   width: unset !important;
 }
 
+.dot {
+  height: 1vw;
+  width: 1vw;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 1vw;
+}
+.overlap-group {
+  line-height: 4vh;
+}
+
 :root {
   --colouraccentcolor-blue100: rgba(80, 178, 192, 1);
   --colouraccentcolor-fadedorange100: rgba(250, 170, 141, 1);
@@ -82,15 +94,4 @@
   --colourblack-grey80: rgba(65, 62, 64, 1);
   --colourblack-grey90: rgba(49, 47, 48, 1);
   --variable-collection-90: rgba(255, 83, 25, 1);
-}
-.dot {
-  height: 1vw;
-  width: 1vw;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 1vw;
-}
-.overlap-group {
-  line-height: 4vh;
 }
