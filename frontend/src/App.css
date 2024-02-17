@@ -7,28 +7,36 @@
   src: local('Antic-Didone-Regular'), url(assets/fonts/AnticDidone-Regular.ttf) format('truetype');
 }
 
+:root {
+  --accentcolor-blue100: #50b2c0;
+  --accentcolor-blue90: #7ac6ff;
+  --accentcolor-fadedorange100: #faaa8d;
+  --accentcolor-orange100: #ff4000;
+  --accentcolor-orange80: rgba(217, 108, 6, 1);
+  --accentcolor-orange90: rgba(255, 83, 25, 1);
+  --colourbackground-peach: rgba(254, 239, 221, 1);
+  --colourblack-grey10: rgba(217, 217, 217, 1);
+  --colourblack-grey100: rgba(32, 30, 31, 1);
+  --colourblack-grey80: rgba(65, 62, 64, 1);
+  --colourblack-grey90: rgba(49, 47, 48, 1);
+  --variable-collection-90: rgba(255, 83, 25, 1);
+}
 
 .App {
   text-align: center;
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 .App .overlap-group {
-  left: 30%;
+  left: 29%;
   top: 23%;
   position: absolute;
 }
@@ -36,6 +44,7 @@
 .App .antic-didone-regular {
   font-family: "AnticDidone-Regular";
   letter-spacing: 0;
+  color: var(--colourblack-grey100);
   font-weight: 400;
   font-size: 40px;
   line-height: normal;
@@ -46,6 +55,7 @@
   stroke: 3;
   font-family: "AnticDidone-Bolded";
   font-size: 140px;
+  color: var(--colourblack-grey100);
   font-weight: 400;
   letter-spacing: 0;
   line-height: normal;
@@ -60,38 +70,15 @@
   text-align: center;
 }
 
-.App .frame {
-  height: 82px;
-  position: relative;
-  width: 337px;
-}
-
-.App .design-component-instance-node {
-  width: unset !important;
-}
-
 .dot {
   height: 1vw;
   width: 1vw;
-  background-color: #bbb;
+  background-color: var(--accentcolor-orange100);
   border-radius: 50%;
   display: inline-block;
   margin-right: 1vw;
 }
+
 .overlap-group {
   line-height: 4vh;
-}
-
-:root {
-  --colouraccentcolor-blue100: rgba(80, 178, 192, 1);
-  --colouraccentcolor-fadedorange100: rgba(250, 170, 141, 1);
-  --colouraccentcolor-orange100: rgba(255, 64, 0, 1);
-  --colouraccentcolor-orange80: rgba(217, 108, 6, 1);
-  --colouraccentcolor-orange90: rgba(255, 83, 25, 1);
-  --colourbackground-peach: rgba(254, 239, 221, 1);
-  --colourblack-grey10: rgba(217, 217, 217, 1);
-  --colourblack-grey100: rgba(32, 30, 31, 1);
-  --colourblack-grey80: rgba(65, 62, 64, 1);
-  --colourblack-grey90: rgba(49, 47, 48, 1);
-  --variable-collection-90: rgba(255, 83, 25, 1);
 }
