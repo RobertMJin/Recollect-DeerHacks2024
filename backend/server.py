@@ -1,10 +1,12 @@
-from flask import Flask
+"""Flask server for serving data to react"""
 import datetime
- 
-x = datetime.datetime.now()
+from flask import Flask
  
 # Initializing flask app
 app = Flask(__name__)
+ 
+# Getting current time
+x = datetime.datetime.now()
  
  
 # Route for seeing a data
@@ -13,10 +15,10 @@ def get_time():
  
     # Returning an api for showing in  reactjs
     return {
-        'Name':"geek", 
-        "Age":"22",
-        "Date":x, 
-        "programming":"python"
+        'Name': "geek", 
+        "Age": "22",
+        "Date": x, 
+        "programming": "python"
         }
  
      
