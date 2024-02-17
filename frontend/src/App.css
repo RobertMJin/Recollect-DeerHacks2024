@@ -2,17 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,11 +17,70 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App .overlap-group {
+  left: 30%;
+  top: 23%;
+  position: absolute;
+}
+
+.App .antic-didone-regular {
+  color: #000000;
+  font-size: 40px;
+  font-weight: 400;
+  height: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.App .antic-didone-bolded {
+  -webkit-text-stroke: 3px #000000;
+  font-size: 140px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+}
+
+.App .sign-in {
+  text-align: center;
+}
+
+.App .continue-as-guest {
+  text-align: center;
+}
+
+.App .frame {
+  height: 82px;
+  position: relative;
+  width: 337px;
+}
+
+.App .design-component-instance-node {
+  width: unset !important;
+}
+
+:root {
+  --colouraccentcolor-blue100: rgba(80, 178, 192, 1);
+  --colouraccentcolor-fadedorange100: rgba(250, 170, 141, 1);
+  --colouraccentcolor-orange100: rgba(255, 64, 0, 1);
+  --colouraccentcolor-orange80: rgba(217, 108, 6, 1);
+  --colouraccentcolor-orange90: rgba(255, 83, 25, 1);
+  --colourbackground-peach: rgba(254, 239, 221, 1);
+  --colourblack-grey10: rgba(217, 217, 217, 1);
+  --colourblack-grey100: rgba(32, 30, 31, 1);
+  --colourblack-grey80: rgba(65, 62, 64, 1);
+  --colourblack-grey90: rgba(49, 47, 48, 1);
+  --variable-collection-90: rgba(255, 83, 25, 1);
+}
+.dot {
+  height: 1vw;
+  width: 1vw;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 1vw;
+}
+.overlap-group {
+  line-height: 4vh;
 }
