@@ -1,0 +1,99 @@
+.background {
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .background .div-2 {
+    background: linear-gradient(
+      180deg,
+      rgb(122.47, 198.14, 255) 0%,
+      rgb(108.08, 236.64, 255) 99.99%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    background-color: rgba(255, 255, 255, 1);
+    height: 1024px;
+    position: relative;
+    width: 1440px;
+  }
+  
+  .background .overlap-group {
+    height: 222px;
+    left: 395px;
+    position: absolute;
+    top: 295px;
+    width: 620px;
+  }
+  
+  .background .dots {
+    height: 99px;
+    left: 0;
+    position: absolute;
+    top: 4px;
+    width: 99px;
+  }
+  
+  .background .description {
+    color: #000000;
+    font-family: "Antic Didone-Regular", Helvetica;
+    font-size: 40px;
+    font-weight: 400;
+    height: 48px;
+    left: 75px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 174px;
+    white-space: nowrap;
+  }
+  
+  .background .title {
+    -webkit-text-stroke: 3px #000000;
+    color: var(--colourblack-grey100);
+    font-family: "Antic Didone-Regular", Helvetica;
+    font-size: 140px;
+    font-weight: 400;
+    height: 179px;
+    left: 25px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 595px;
+  }
+  
+  .background .SIGN-IN {
+    height: 82px;
+    left: 552px;
+    position: absolute;
+    top: 543px;
+    width: 337px;
+  }
+  
+  .background .frame {
+    height: 82px;
+    position: relative;
+    width: 337px;
+  }
+  
+  .background .design-component-instance-node {
+    width: unset !important;
+  }
+  
+  .background .CONTINUE-AS-GUEST {
+    height: 82px;
+    left: 515px;
+    position: absolute;
+    top: 642px;
+    width: 410px;
+  }
+  
+  .background .continue-as-guest-wrapper {
+    height: 82px;
+    position: relative;
+    width: 410px;
+  }  
