@@ -62,12 +62,32 @@
   text-align: center;
 }
 
-.App .sign-in {
+.sign-in,
+.continue-as-guest {
   text-align: center;
 }
 
-.App .continue-as-guest {
-  text-align: center;
+.button {
+  width: 220px;
+  margin-top: 10px;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+
+  font-family: 'Circular',-apple-system,'BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.sign-in .button {
+  background-color: var(--accentcolor-orange100);
+  color: white;
+  margin-top: 20px;
+
+}
+.continue-as-guest .button {
+  background-color: whitesmoke;
+  color: var(--accentcolor-fadedorange100);
 }
 
 .dot {
