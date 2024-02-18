@@ -12,6 +12,8 @@
 /build
 
 *.pyc
+*.mp4
+*.wav
 
 .env
 
