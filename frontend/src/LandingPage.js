@@ -38,15 +38,32 @@ function LandingPage() {
           <div className="continue-as-guest">
             <div className="frame">
                 <Link to="/fileUpload">
-                <button className="button">Continue as Guest</button>
+                  <button className="button">Continue as Guest</button>
+                </Link>
+            </div>
+          </div>
+          
+          <div className="display-data">
+            <div className="frame">
+                <Link to="/results">
+                <button className="button">Display Data</button>
               </Link>
             </div>
           </div>
 
+          <div className="text">
+            <div className="frame">
+                <Link to="/textUpload">
+                <button className="button">Display Text</button>
+              </Link>
+            </div>
+          </div>
+
+            {/* File Upload */}
           <form action="/action_page.php">
-              <input type="file" id="myFile" name="filename"></input>
-              <input type="submit"></input>
+              <input type="text" id="myFile" name="filename"></input>
           </form>
+
         </div>
     )
 }

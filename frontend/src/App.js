@@ -1,19 +1,25 @@
 import './App.css';
-import SingleFileUploader from './singleFileUploader.js';
 import Upload from './Upload.js';
 import React from 'react';
 import LandingPage from "./LandingPage.js";
+import Display from "./display.js";
+import TextUpload from "./textupload.js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   return (
     <div className="App" style={{background: "linear-gradient(var(--accentcolor-blue100), var(--accentcolor-blue90))"}}>
       <header className="App-header">
         <Router>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/fileUpload" element={<Upload />} />
-          </Routes>
+            <AnimatePresence>
+              <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/fileUpload" element={<Upload />} />
+                {/* <Route path="/results" element={<Display.render />} /> */}
+                <Route path="/textUpload" element={<TextUpload />} />
+              </Routes>
+            </AnimatePresence>
             {/*
             <Route path="/results">
               <Results />
