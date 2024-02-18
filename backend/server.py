@@ -1,5 +1,6 @@
 """Flask server for serving data to react"""
 import os
+from pydub import AudioSegment
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS, cross_origin
 from werkzeug.utils import secure_filename
@@ -16,6 +17,9 @@ CORS(app, supports_credentials=True)
 @app.route('/api/upload', methods=['POST'])
 @cross_origin(supports_credentials=True)
 def upload_file():
+    globals()['clips'] = []
+    globals()['clipNum'] = 0
+    globals()['transcript'] = ""
     print("server received request")
     if request.method == 'POST':
         print("post request")
@@ -27,6 +31,7 @@ def upload_file():
 
 clips = []
 clipNum = 0
+transcript = ""
 @app.route('/api/clip', methods=['POST'])
 def clip():
     data = request.get_json()
@@ -42,7 +47,19 @@ def clip():
     original_clip = VideoFileClip(original_video_path).subclip(start_time, end_time)
     globals()['clips'].append(original_clip)
     clipped_path = 'clips/clip' + str(globals()['clipNum']) + '.mp4'
+    audio_path = 'clips/clip' + str(globals()['clipNum']) + '.wav'
+
+    original_clip.audio.write_audiofile(audio_path)
+    
+    sound = AudioSegment.from_wav(audio_path)
+    sound = sound.set_channels(1)
+    sound.export(audio_path, format="wav")
+
     globals()['clipNum'] += 1
+    response = transcribe_file(audio_path)
+
+    for result in response.results:
+        globals()['transcript'] += result.alternatives[0].transcript
 
     original_clip.write_videofile(clipped_path, codec='libx264')
 
@@ -74,21 +91,7 @@ def download():
 
 @app.route('/summary', methods=['GET'])
 def summary():
-
-    video_path = 'final_clips_video.mp4'
-
-    video = VideoFileClip(video_path)
-
-    audio_path = 'final_clips_audio.wav'
-    video.audio.write_audiofile(audio_path)
-
-    response = transcribe_file(audio_path)
-    
-    transcribed_text = ""
-    for result in response.results:
-        transcribed_text += result.alternatives[0].transcript + " "
-    
-    output = summarize(transcribed_text)
+    output = summarize(globals()['transcript'])
     
     return jsonify({"output": output})
 
