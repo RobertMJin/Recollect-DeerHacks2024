@@ -4,9 +4,9 @@ import os
 
 co = cohere.Client(settings.COHERE_API_KEY)
 
-def summarize(text: str) -> str:
+def summarize(input: str) -> str:
   response = co.summarize( 
-    text='',
+    text=input,
     length='auto',
     format='auto',
     model='command',
