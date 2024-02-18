@@ -44,7 +44,6 @@ function LandingPage() {
                 </Link>
             </div>
           </div>
-          
           <div className="display-data">
             <div className="frame">
                 <Link to="/results">
@@ -52,12 +51,6 @@ function LandingPage() {
               </Link>
             </div>
           </div>
-
-            {/* File Upload */}
-          <form action="/action_page.php">
-              <input type="text" id="myFile" name="filename"></input>
-          </form>
-
         </div>
     )
 }
