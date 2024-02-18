@@ -144,8 +144,8 @@ const Upload = () => {
       {file && <button className="upload-video" onClick={handleUpload}>Upload Video</button>}
       </>
   )}
-      {file && <button onClick={handleClip}>Clip</button>}
-      {file && <button onClick={fetchData}>Finish</button>}
+      {file && isUploaded && <button className="clip" onClick={handleClip}>Clip</button>}
+      {file && isUploaded && <button className="finish" onClick={fetchData}>Finish</button>}
       {makeArr()}
     </div>
     </>

@@ -60,9 +60,11 @@
     color:whitesmoke;
 }
 
+.clip,
+.finish,
 .custom-file-upload,
 .upload-video {
-    margin-top: 20px;
+    margin: 20px 5px;
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
@@ -86,6 +88,3 @@
   margin-left: 10px;
 }
 
-.upload-status.uploaded {
-  background-color: green;
-}
