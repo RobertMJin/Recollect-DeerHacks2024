@@ -76,20 +76,35 @@
 
   font-family: 'Circular',-apple-system,'BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 550;
 }
 
 .sign-in .button {
   background-color: var(--accentcolor-orange100);
   color: white;
   margin-top: 20px;
-
 }
+
+.sign-in .button:hover {
+  background-color: rgb(238, 64, 0);
+  color: white;
+  margin-top: 20px;
+}
+
 .continue-as-guest .button {
-  background-color: whitesmoke;
-  color: var(--accentcolor-fadedorange100);
+  background-color: white;
+  color: rgb(255, 119, 70);
 }
 
+.continue-as-guest .button:hover {
+  background-color: whitesmoke;
+  color: rgb(255, 107, 53);
+}
+
+.display-data .button {
+  margin-top: 60px;
+  width: auto;
+}
 .dot {
   height: 1vw;
   width: 1vw;
