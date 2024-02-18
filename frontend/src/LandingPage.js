@@ -23,11 +23,13 @@ function LandingPage() {
               <span className="dot"></span>
             </div>
           </div>
-
+          
           {/* Title */}
           <div className="antic-didone-bolded">Recollect</div>
           {/* Description */}
           <div className="antic-didone-regular">actively recall your lectures</div>
+          
+          
 
           {/* Buttons */}
           <div className="sign-in">
@@ -47,14 +49,6 @@ function LandingPage() {
             <div className="frame">
                 <Link to="/results">
                 <button className="button">Display Data</button>
-              </Link>
-            </div>
-          </div>
-
-          <div className="text">
-            <div className="frame">
-                <Link to="/textUpload">
-                <button className="button">Display Text</button>
               </Link>
             </div>
           </div>
