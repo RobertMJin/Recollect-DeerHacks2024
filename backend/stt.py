@@ -1,10 +1,9 @@
 import argparse
 import io
 import os
-
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r"C:\Users\plane\Documents\DeerHacks2024\Striking_Yen_414621.json"
 from google.cloud import speech
 
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r"backend\api_credentials\Striking_Yen_414621.json"
 
 def transcribe_file(speech_file: str) -> speech.RecognizeResponse:
     """Transcribe the given audio file."""
@@ -24,11 +23,8 @@ def transcribe_file(speech_file: str) -> speech.RecognizeResponse:
 
     # Each result is for a consecutive portion of the audio. Iterate through
     # them to get the transcripts for the entire audio file.
-    for result in response.results:
-        # The first alternative is the most likely one for this portion.
-        print(f"Transcript: {result.alternatives[0].transcript}")
+    # for result in response.results:
+    #     # The first alternative is the most likely one for this portion.
+    #     print(f"Transcript: {result.alternatives[0].transcript}")
 
     return response
-
-transcribe_file("sample-2.mp3")
-
