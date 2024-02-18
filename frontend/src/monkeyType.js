@@ -1,6 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useLocation }  from 'react-router-dom';
 
 function MonkeyType() {
+    let location = useLocation();
+    useEffect(() => {
+        console.log(location.state.data, location.state.videodata);
+    }, [location]);
+    let text = location.state.data.output;
+    let video = location.state.videodata;
     const [char, setChar] = useState('');
     const [input, setInput] = useState('');
     // const [time, setTime] = useState(0);
@@ -32,8 +39,7 @@ function MonkeyType() {
             <h1>Active Recall Context from Class</h1>
             <p>Try:</p>
             <p>{text}</p>
-            <input type="text" onChange={handleChange} onKeyDown={handleKeyPress} />
-            <p>Score: {score}</p>
+            <input type="text" onChange={handleChar} onKeyDown={handleKeyPress} />
         </div>
     );
 }

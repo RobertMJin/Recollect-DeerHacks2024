@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import ReactPlayer from 'react-player';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Upload.css';
 
 const Upload = () => {
@@ -11,6 +11,7 @@ const Upload = () => {
   const [played, setPlayed] = useState(0);
   const [arr, setArr] = useState([]);
   const playerRef = useRef(0);
+  const navigate = useNavigate();
 
   function makeArr() {
     return arr.map((item, i) => (<ul key={i}>
@@ -24,6 +25,26 @@ const Upload = () => {
     const selectedFile = e.target.files[0];
     setFile(selectedFile);
     setVideoUrl(URL.createObjectURL(selectedFile));
+  };
+  
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('http://127.0.0.1:5000/summary', {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      const vidresponse = await axios.get('http://127.0.0.1:5000/combineclipsvideo', {
+        headers: {
+          'Content-Type': 'video/mp4',
+        },
+      });
+      console.log('Background GET request successful:', response.data, vidresponse.data);
+      navigate("/results", { state: { data: response.data }, vidstate: { videodata: vidresponse.data } });
+
+    } catch (error) {
+      console.error('Error making background GET request:', error);
+    }
   };
 
   const handleClip = async () => {
@@ -124,6 +145,8 @@ const Upload = () => {
       </>
   )}
       {file && <button onClick={handleClip}>Clip</button>}
+      {file && <button onClick={handleUpload}>Confirm Upload</button>}
+      {file && <button onClick={fetchData}>Finish</button>}
       {makeArr()}
     </div>
     </>

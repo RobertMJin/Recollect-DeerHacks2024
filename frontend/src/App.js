@@ -5,6 +5,7 @@ import LandingPage from "./LandingPage.js";
 import Display from "./display.js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import MonkeyType from './monkeyType.js';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/fileUpload" element={<Upload />} />
-                {/* <Route path="/results" element={<Display.render />} /> */}
+                <Route path="/results" element={<MonkeyType />} />
               </Routes>
             </AnimatePresence>
             {/*
