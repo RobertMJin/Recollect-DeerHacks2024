@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function MonkeyType() {
     const [char, setChar] = useState('');
     const [input, setInput] = useState('');
     // const [time, setTime] = useState(0);
     let charArray = text.split();
+    let location = useLocation();
+
+    let text = location.state.data.output;
+    let video = location.state.videodata;
 
     const handleChar = async() => {
         if (char == '') {

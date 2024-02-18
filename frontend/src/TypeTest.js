@@ -1,8 +1,11 @@
 import React, { useEffect, useMemo, useState } from "react";
-const text =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet tellus tortor. ";
+import { useLocation } from "react-router-dom";
+import './App.css';
 
 export default function TypeTest() {
+  let location = useLocation();
+  const text = location.state.data.output;
+  let video = location.state.videodata;
   const [textToType] = useState(text);
   const [typedText, setTypedText] = useState("");
   const [timer, setTimer] = useState();
@@ -55,13 +58,13 @@ export default function TypeTest() {
           <b>{parts.matchedPart}</b>
           {parts.unmatchedPart}
         </div>
-        <button onClick={start}>start</button>
-        <textarea
+        <textarea className="textArea"
           disabled={!started}
           value={typedText}
           onChange={(e) => setTypedText(e.target.value)}
-          style={{ width: "90vw", height: "300px" }}
-        ></textarea>
+          style={{ width: "90vw", height: "30px" }}
+        ></textarea><br />
+        <button onClick={start}>start</button>
       </div>
     );
   } else {

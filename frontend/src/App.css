@@ -117,3 +117,7 @@
 .overlap-group {
   line-height: 4vh;
 }
+
+::-webkit-resizer {
+  display:none;
+}
