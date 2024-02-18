@@ -3,7 +3,6 @@ import Upload from './Upload.js';
 import React from 'react';
 import LandingPage from "./LandingPage.js";
 import Display from "./display.js";
-import TextUpload from "./textupload.js";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
@@ -17,7 +16,6 @@ function App() {
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/fileUpload" element={<Upload />} />
                 {/* <Route path="/results" element={<Display.render />} /> */}
-                <Route path="/textUpload" element={<TextUpload />} />
               </Routes>
             </AnimatePresence>
             {/*
