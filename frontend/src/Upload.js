@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
 import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
@@ -66,7 +66,7 @@ const Upload = () => {
 
     try {
       // Replace 'your-upload-api-endpoint' with your actual server endpoint for video upload
-      const response = await axios.post('your-upload-api-endpoint', formData, {
+      const response = await axios.post('http://127.0.0.1:5000/api/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

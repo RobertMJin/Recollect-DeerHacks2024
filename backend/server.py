@@ -44,6 +44,7 @@ def clip():
     if not original_video_path or start_time is None or end_time is None:
         return jsonify({'error': 'Invalid request data'}), 400
 
+    print(start_time, end_time)
     original_clip = VideoFileClip(original_video_path).subclip(start_time, end_time)
     globals()['clips'].append(original_clip)
     clipped_path = 'clips/clip' + str(globals()['clipNum']) + '.mp4'
@@ -57,6 +58,7 @@ def clip():
 
     globals()['clipNum'] += 1
     response = transcribe_file(audio_path)
+    print("transcribed successfully")
 
     for result in response.results:
         globals()['transcript'] += result.alternatives[0].transcript
