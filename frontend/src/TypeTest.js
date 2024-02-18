@@ -1,11 +1,14 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 import './App.css';
+import ReactPlayer from 'react-player';
+
 
 export default function TypeTest() {
   let location = useLocation();
   const text = location.state.data.output;
-  let video = location.state.videodata;
+  let video = "http://127.0.0.1:5000/combineclipsvideo";
+  console.log(video);
   const [textToType] = useState(text);
   const [typedText, setTypedText] = useState("");
   const [timer, setTimer] = useState();
@@ -54,6 +57,7 @@ export default function TypeTest() {
   if (parts.unmatchedPart.length > 1) {
     return (
       <div>
+        <ReactPlayer class="reactPlayer" url={video} playing={true} controls={true} />
         <div>
           <b>{parts.matchedPart}</b>
           {parts.unmatchedPart}

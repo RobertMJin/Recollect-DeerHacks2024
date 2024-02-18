@@ -34,13 +34,13 @@ const Upload = () => {
           'Content-Type': 'application/json',
         },
       });
-      const vidresponse = await axios.get('http://127.0.0.1:5000/combineclipsvideo', {
-        headers: {
-          'Content-Type': 'video/mp4',
-        },
-      });
-      console.log('Background GET request successful:', response.data, vidresponse.data);
-      navigate("/results", { state: { data: response.data }, vidstate: { videodata: vidresponse.data } });
+      // const vidresponse = await axios.get('http://127.0.0.1:5000/combineclipsvideo', {
+      //   headers: {
+      //     'Content-Type': 'video/mp4',
+      //   },
+      // });
+      console.log('Background GET request successful:', response.data);
+      navigate("/results", { state: { data: response.data }});
 
     } catch (error) {
       console.error('Error making background GET request:', error);
