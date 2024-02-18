@@ -7,6 +7,7 @@ import './Upload.css';
 const Upload = () => {
   const [file, setFile] = useState(null);
   const [videoUrl, setVideoUrl] = useState('');
+  const [isUploaded, setIsUploaded] = useState(false);
   const [played, setPlayed] = useState(0);
   const [arr, setArr] = useState([]);
   const playerRef = useRef(0);
@@ -63,6 +64,7 @@ const Upload = () => {
   const handleUpload = async () => {
     const formData = new FormData();
     formData.append('video', file);
+    setIsUploaded(true);
 
     try {
       // Replace 'your-upload-api-endpoint' with your actual server endpoint for video upload
@@ -78,30 +80,51 @@ const Upload = () => {
     }
   };
 
+  let content;
+  if (!videoUrl) {
+    content = "No video selected";
+  }
+  else if (videoUrl && !isUploaded) {
+    content = "Video selected, click 'Upload Video' to upload";
+  }
+  else {
+    content = 
+      <div className="react-player-wrapper">
+      <ReactPlayer url={videoUrl} ref={playerRef} controls width = "100%" height="100%"/>
+      </div>
+  }
+; 
+
   return (
     <>
     <div className="header">
       <h1>Video Upload and Playback</h1>
     </div>
-    <div className="white-box"></div>
+    <div className="white-box">
+      {content}
+    </div>
+    {/* {videoUrl && <ReactPlayer url={videoUrl} controls />} */}
     <div>
       <Link to="/">
         <button className="button button-top-left">Return to Login</button>
       </Link>
-
-      <input type="file" id="file-input" accept="video/*" onChange={handleFileChange} style={{ display: 'none'}}/>
+      {!isUploaded && (
+      <>
+        <input 
+          type="file" 
+          id="file-input" 
+          accept="video/*" 
+          onChange={handleFileChange} 
+          style={{ display: 'none'}}
+      />
       <label htmlFor="file-input" className="custom-file-upload">
         Choose file
       </label>
-
-      {videoUrl && <ReactPlayer url={videoUrl} ref={playerRef} controls />}
+      {file && <button className="upload-video" onClick={handleUpload}>Upload Video</button>}
+      </>
+  )}
       {file && <button onClick={handleClip}>Clip</button>}
-      {file && <button onClick={handleUpload}>Confirm Upload</button>}
       {makeArr()}
-      { <Link to="/">
-        <button className="button">Back</button>
-      </Link> }
-
     </div>
     </>
   );
