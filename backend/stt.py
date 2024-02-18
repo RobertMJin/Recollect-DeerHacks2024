@@ -1,9 +1,10 @@
 import argparse
 import io
 import os
+import api_credentials.settings as settings
 from google.cloud import speech
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r"backend\api_credentials\Striking_Yen_414621.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = settings.GOOGLE_APPLICATION_CREDENTIALS
 
 def transcribe_file(speech_file: str) -> speech.RecognizeResponse:
     """Transcribe the given audio file."""
@@ -28,3 +29,5 @@ def transcribe_file(speech_file: str) -> speech.RecognizeResponse:
     #     print(f"Transcript: {result.alternatives[0].transcript}")
 
     return response
+
+# transcribe_file("OSR_us_000_0010_8k.wav")
