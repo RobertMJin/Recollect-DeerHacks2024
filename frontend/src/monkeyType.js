@@ -1,13 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation }  from 'react-router-dom';
+import React, { useState } from 'react';
 
 function MonkeyType() {
-    let location = useLocation();
-    useEffect(() => {
-        console.log(location.state.data, location.state.videodata);
-    }, [location]);
-    let text = location.state.data.output;
-    let video = location.state.videodata;
     const [char, setChar] = useState('');
     const [input, setInput] = useState('');
     // const [time, setTime] = useState(0);
