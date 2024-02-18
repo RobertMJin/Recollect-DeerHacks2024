@@ -1,2 +1,0 @@
-GOOGLE_APPLICATION_CREDENTIALS="backend\api_credentials\Striking_Yen_414621.json"
-COHERE_API_KEY="B2nQXgCPy8eoAwaz0o3lX1IgHIZfys89v3hK8yp4"
