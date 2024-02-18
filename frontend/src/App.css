@@ -102,6 +102,7 @@
 }
 
 .display-data .button {
+  visibility: hidden;
   margin-top: 60px;
   width: auto;
 }

@@ -106,7 +106,7 @@ const Upload = () => {
     content = "No video selected";
   }
   else if (videoUrl && !isUploaded) {
-    content = "Video selected, click 'Upload Video' to upload";
+    content = "Video selected, click 'Confirm Upload'";
   }
   else {
     content = 
@@ -141,7 +141,7 @@ const Upload = () => {
       <label htmlFor="file-input" className="custom-file-upload">
         Choose file
       </label>
-      {file && <button className="upload-video" onClick={handleUpload}>Upload Video</button>}
+      {file && <button className="upload-video" onClick={handleUpload}>Confirm Upload</button>}
       {file && <button className="clip clip-hidden" onClick={handleClip}>Clip</button>}
       {file && <button className="finish finish-hidden" onClick={fetchData}>Finish</button>}
       </>
