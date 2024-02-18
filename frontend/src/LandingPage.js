@@ -44,6 +44,13 @@ function LandingPage() {
                 </Link>
             </div>
           </div>
+          <div className="display-data">
+            <div className="frame">
+                <Link to="/results">
+                <button className="button">Display Data</button>
+              </Link>
+            </div>
+          </div>
         </div>
     )
 }
