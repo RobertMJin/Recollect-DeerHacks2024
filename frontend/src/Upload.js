@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
@@ -65,7 +65,8 @@ const Upload = () => {
     formData.append('video', file);
 
     try {
-      const response = await axios.post('http://127.0.0.1:5000/api/upload', formData, {
+      // Replace 'your-upload-api-endpoint' with your actual server endpoint for video upload
+      const response = await axios.post('your-upload-api-endpoint', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -82,11 +83,17 @@ const Upload = () => {
     <div className="header">
       <h1>Video Upload and Playback</h1>
     </div>
+    <div className="white-box"></div>
     <div>
       <Link to="/">
         <button className="button button-top-left">Return to Login</button>
       </Link>
-      <input type="file" accept="video/*" onChange={handleFileChange} />
+
+      <input type="file" id="file-input" accept="video/*" onChange={handleFileChange} style={{ display: 'none'}}/>
+      <label htmlFor="file-input" className="custom-file-upload">
+        Choose file
+      </label>
+
       {videoUrl && <ReactPlayer url={videoUrl} ref={playerRef} controls />}
       {file && <button onClick={handleClip}>Clip</button>}
       {file && <button onClick={handleUpload}>Confirm Upload</button>}
@@ -94,6 +101,7 @@ const Upload = () => {
       { <Link to="/">
         <button className="button">Back</button>
       </Link> }
+
     </div>
     </>
   );
