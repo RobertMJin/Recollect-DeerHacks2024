@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 
-const  Playback = () => {
+const Playback = () => {
     const [videoUrl, setVideoUrl] = useState('https://youtube.com/watch?v=ysz5S6PUM-U');
 
     const handleFileChange = (e) => {
