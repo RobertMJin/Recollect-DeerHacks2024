@@ -1,21 +1,17 @@
 """Flask server for serving data to react"""
-import datetime
 import os
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS, cross_origin
 from werkzeug.utils import secure_filename
 from moviepy.video.io.VideoFileClip import VideoFileClip
 from moviepy.editor import concatenate_videoclips
+
 from stt import transcribe_file
 from summarizer import summarize
 
 # Initializing flask app
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
-
-
-# Getting current time
-x = datetime.datetime.now()
  
 @app.route('/api/upload', methods=['POST'])
 @cross_origin(supports_credentials=True)
@@ -76,8 +72,8 @@ def download():
     return send_file(video_path, as_attachment=True)
 
 
-@app.route('/transcript', methods=['GET'])
-def transcript():
+@app.route('/summary', methods=['GET'])
+def summary():
 
     video_path = 'final_clips_video.mp4'
 
@@ -87,8 +83,14 @@ def transcript():
     video.audio.write_audiofile(audio_path)
 
     response = transcribe_file(audio_path)
-
-    return send_file(video_path, as_attachment=True)
+    
+    transcribed_text = ""
+    for result in response.results:
+        transcribed_text += result.alternatives[0].transcript + " "
+    
+    output = summarize(transcribed_text)
+    
+    return jsonify({"output": output})
 
      
 # Running app
