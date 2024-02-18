@@ -142,6 +142,8 @@ const Upload = () => {
         Choose file
       </label>
       {file && <button className="upload-video" onClick={handleUpload}>Upload Video</button>}
+      {file && <button className="clip clip-hidden" onClick={handleClip}>Clip</button>}
+      {file && <button className="finish finish-hidden" onClick={fetchData}>Finish</button>}
       </>
   )}
       {file && isUploaded && <button className="clip" onClick={handleClip}>Clip</button>}

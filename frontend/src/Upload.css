@@ -75,9 +75,15 @@
     color: #333; /* Text color */
     font-weight: 550;
   }
+
   .upload-video:hover,
   .custom-file-upload:hover {
     background-color: #e9e9e9; /* Slightly darker grey on hover */
+  }
+
+  .finish-hidden,
+  .clip-hidden {
+    display: none;
   }
 
   .upload-status {
@@ -86,5 +92,19 @@
   background-color: white;
   border: 1px solid black;
   margin-left: 10px;
+}
+
+.clip, 
+.finish {
+  background-color: #ff4000;
+  color: white;
+  transition: background-color 0.5s ease, box-shadow 0.3s;
+}
+
+.clip:hover,
+.finish:hover {
+  background-color: #ff3300;
+  color: white;
+  box-shadow: 0 0 15px whitesmoke;
 }
 
